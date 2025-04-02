@@ -2,9 +2,8 @@ import { useState} from "react";
 
 
 
-const ColorList = ({ colorChoice, setColorChoice }) => {
-  
-  return <div className={colorChoice} onClick={()=> setColorChoice(colorChoice)}></div>
+const ColorList = ({ color, colorChoice, setColorChoice }) => {  
+  return <div className={`${color} ${colorChoice === color ? "selected" : null}`} onClick={() => setColorChoice(color)}></div>
 }
 
 
@@ -12,9 +11,7 @@ const ColorList = ({ colorChoice, setColorChoice }) => {
 const App = () => {
 
   const [colorChoice, setColorChoice] = useState("red");
-
-
-
+ 
   return (
     <div id="container">
       <div id="navbar">
@@ -22,9 +19,21 @@ const App = () => {
         <div className={colorChoice}>{colorChoice}</div>
       </div>
       <div id="colors-list">
-        <ColorList colorChoice={"yellow"} setColorChoice={setColorChoice} />
-        <ColorList colorChoice={"green"} setColorChoice={setColorChoice} />
-        <ColorList colorChoice={"black"} setColorChoice={setColorChoice} />
+        <ColorList
+          color={"yellow"}
+          colorChoice={colorChoice}
+          setColorChoice={setColorChoice}
+        />
+        <ColorList
+          color={"green"}
+          colorChoice={colorChoice}
+          setColorChoice={setColorChoice}
+        />
+        <ColorList
+          color={"black"}
+          colorChoice={colorChoice}
+          setColorChoice={setColorChoice}
+        />
       </div>
     </div>
   );
