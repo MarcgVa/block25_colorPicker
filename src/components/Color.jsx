@@ -1,11 +1,18 @@
+import ColorList from "./colors";
 
+const Color = ({ selectedColor, setSelectedColor }) => {
 
-const Color = ({ color, colorChoice, setColorChoice }) => {
-  return (
-    <div
-      className={`${color} ${colorChoice === color ? "selected" : null}`}
-      onClick={() => setColorChoice(color)}
-    ></div>
-  );
-};
+  return(
+    ColorList &&
+    ColorList.map((color) => {
+      return (
+        <div key={color}
+          className={`${color} ${selectedColor === color ? "selected" : null}`}
+          onClick={() => setSelectedColor(color)}
+        ></div>
+      );
+    })
+  )
+}
+
 export default Color
