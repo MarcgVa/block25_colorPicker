@@ -1,12 +1,5 @@
 import { useState} from "react";
-
-
-
-const ColorList = ({ color, colorChoice, setColorChoice }) => {  
-  return <div className={`${color} ${colorChoice === color ? "selected" : null}`} onClick={() => setColorChoice(color)}></div>
-}
-
-
+import Color from "./components/Color";
 
 const App = () => {
 
@@ -19,17 +12,17 @@ const App = () => {
         <div className={colorChoice}>{colorChoice}</div>
       </div>
       <div id="colors-list">
-        <ColorList
+        <Color
           color={"yellow"}
           colorChoice={colorChoice}
           setColorChoice={setColorChoice}
         />
-        <ColorList
+        <Color
           color={"green"}
           colorChoice={colorChoice}
           setColorChoice={setColorChoice}
         />
-        <ColorList
+        <Color
           color={"black"}
           colorChoice={colorChoice}
           setColorChoice={setColorChoice}
