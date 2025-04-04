@@ -1,3 +1,4 @@
 # 🎨 Color Picker
 
-Follow the instructions in the workshop to finish the assignment!
+Deployed website: https://app.netlify.com/sites/mg-block25-color-picker/overview
+
